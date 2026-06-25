@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>Products</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cart.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+padding:120px 8% 60px;
+background:
+radial-gradient(circle at center,#1a1a1a 0%,#050505 70%);
+border-bottom:1px solid #151515;
+}
+
+.hero-layout{
+display:flex;
+gap:80px;
+align-items:center;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:220px;
+flex-shrink:0;
+}
+
+.sidebar h2{
+font-size:13px;
+font-weight:300;
+letter-spacing:4px;
+color:#666;
+margin-bottom:30px;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar li{
+margin-bottom:18px;
+}
+
+.sidebar a{
+color:#888;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
+}
+
+.sidebar a:hover{
+color:#d4ff00;
+padding-left:10px;
+}
+
+/* TITLE AREA */
+
+.hero-content{
+flex:1;
+}
+
+.hero-content h1{
+font-size:clamp(3rem,7vw,6rem);
+font-weight:900;
+line-height:.95;
+color:white;
+}
+
+.hero-content p{
+margin-top:20px;
+font-size:1.2rem;
+color:#999;
+max-width:600px;
+}
+
+/* PRODUCTS */
+
+.grid{
+padding:60px 8% 100px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.product{
+background:#111;
+border:1px solid #222;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+}
+
+.product:hover{
+transform:translateY(-10px);
+border-color:#d4ff00;
+}
+
+.product img{
+width:100%;
+height:300px;
+object-fit:cover;
+background:#1a1a1a;
+}
+
+.product-info{
+padding:20px;
+}
+
+.product h3{
+font-size:1.3rem;
+margin-bottom:10px;
+}
+
+.product p{
+color:#aaa;
+line-height:1.6;
+}
+
+.price{
+margin-top:15px;
+font-size:28px;
+font-weight:800;
+color:#d4ff00;
+}
+
+.btn{
+margin-top:15px;
+width:100%;
+padding:14px;
+background:#d4ff00;
+border:none;
+border-radius:12px;
+font-weight:700;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-layout{
+flex-direction:column;
+align-items:flex-start;
+gap:50px;
+}
+
+.sidebar{
+width:100%;
+}
+
+.hero-content h1{
+font-size:3rem;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+<section class="hero">
+
+<div class="hero-layout">
+
+<div class="sidebar">
+
+<h2>SHOP MORE</h2>
+
+<ul>
+<li><a href="product.html?category=whey-concentrate">Protein</a></li>
+<li><a href="product.html?category=creatine">Creatine</a></li>
+<li><a href="product.html?category=pre-workout">Pre Workout</a></li>
+<li><a href="product.html?category=fat-burner">Fat Burner</a></li>
+<li><a href="product.html?category=mass-gainer">Mass Gainer</a></li>
+<li><a href="product.html?category=bcaa">BCAA</a></li>
+<li><a href="product.html?category=vitamins">Vitamins</a></li>
+</ul>
+
+</div>
+
+<div class="hero-content">
+
+<h1 id="title">WHEY PROTEIN</h1>
+
+<p id="subtitle">
+Premium whey protein for muscle growth, recovery and strength.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="products">
+
+<div class="grid" id="productsContainer"></div>
+
+</section>
+
+</div>
+</div>
+
+<div id="cartSidebar" class="cart-sidebar">
+
+    <div class="cart-header">
+        <h2>My Cart</h2>
+
+        <span onclick="closeCart()">✖</span>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+
+        <h3 id="cartTotal">₹0</h3>
+
+        <button class="checkout-btn">
+            Checkout
+        </button>
+
+    </div>
+
+</div>
+
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
