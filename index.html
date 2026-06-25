@@ -263,23 +263,6 @@ text-decoration:none;
 .dropdown.show{
 display:block;
 }
-.cart-sidebar{
-position:fixed;
-top:0;
-right:-400px;
-width:380px;
-height:100vh;
-background:#111;
-z-index:99999;
-transition:.4s;
-padding:20px;
-overflow-y:auto;
-border-left:2px solid #d4ff00;
-}
-
-.cart-sidebar.active{
-right:0;
-}
 
 .cart-header{
 display:flex;
@@ -514,73 +497,44 @@ View Products
 <section class="section reveal" id="accessories">
 
 <center>
-<h2 class="section-title">
-Gym Essentials
-</h2>
-<p style="color:#aaa;margin-bottom:40px;">
-Everything you need for your fitness journey
-</p>
-</center>
-
-<div class="products">
-
-<div class="card">
-<div class="product-image"></div>
-<h3>Apparel</h3>
-<button class="buy">Explore Collection →</button>
-</div>
-
-<div class="card">
-<div class="product-image"></div>
-<h3>accessories</h3>
-<button class="buy">Explore Collection →</button>
-</div>
-
-<div class="card">
-<div class="product-image"></div>
-<h3>bags</h3>
-<button class="buy">Explore Collection →</button>
-</div>
-
-
-
-</div>
-
 </section>
 
-
-<section class="section reveal" id="products">
+<!-- FEATURES -->
 
 <section class="section reveal" id="features">
 
-<h2 class="section-title">
-Why Choose Us
-</h2>
+    <h2 class="section-title">
+        Why Choose Us
+    </h2>
 
-<div class="features">
+    <div class="features">
 
-<div class="feature">
-<h3>Premium Ingredients</h3>
-<p>High quality tested supplements.</p>
-</div>
+        <div class="feature">
+            <h3>Premium Ingredients</h3>
+            <p>High quality tested supplements.</p>
+        </div>
 
-<div class="feature">
-<h3>Fast Delivery</h3>
-<p>Nationwide shipping and tracking.</p>
-</div>
+        <div class="feature">
+            <h3>Fast Delivery</h3>
+            <p>Nationwide shipping and tracking.</p>
+        </div>
 
-<div class="feature">
-<h3>Trusted By Athletes</h3>
-<p>Designed for serious performance.</p>
-</div>
+        <div class="feature">
+            <h3>Trusted By Athletes</h3>
+            <p>Designed for serious performance.</p>
+        </div>
 
-<div class="feature">
-<h3>Secure Payments</h3>
-<p>100% safe checkout experience.</p>
-</div>
+        <div class="feature">
+            <h3>Secure Payments</h3>
+            <p>100% safe checkout experience.</p>
+        </div>
+
+    </div>
+
 </section>
 
-</div>
+<!-- CART -->
+
 <div id="cartSidebar" class="cart-sidebar">
 
     <div class="cart-header">
@@ -600,10 +554,8 @@ Why Choose Us
 
 </div>
 
-
-
 <footer>
-© 2026 Ultimate Nutrion. All Rights Reserved.
+    © 2026 Ultimate Nutrition. All Rights Reserved.
 </footer>
 
 
@@ -716,4 +668,6 @@ document.addEventListener("DOMContentLoaded",function(){
 </script>
 </body>
 </html>
+
+
 
