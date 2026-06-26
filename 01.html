@@ -1,0 +1,906 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Nutrition - Premium Supplements</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:900;
+color:#d4ff00;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
+background:
+radial-gradient(circle at center,#1a1a1a 0%,#050505 70%);
+}
+
+.hero-content{
+animation:fadeUp 1s ease forwards;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,7rem);
+font-weight:900;
+line-height:1;
+}
+
+.hero span{
+color:#d4ff00;
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.2rem;
+color:#aaa;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:16px 40px;
+background:#d4ff00;
+color:black;
+font-weight:700;
+border-radius:50px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+.section{
+padding:100px 8%;
+}
+
+.section-title{
+font-size:3rem;
+margin-bottom:40px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+border-radius:20px;
+padding:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#d4ff00;
+}
+
+.product-image{
+height:250px;
+border-radius:15px;
+background:linear-gradient(135deg,#222,#333);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+}
+
+.card h3{
+margin-top:15px;
+}
+
+.price{
+margin-top:10px;
+font-size:24px;
+font-weight:700;
+color:#d4ff00;
+}
+
+.buy{
+margin-top:15px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:#d4ff00;
+font-weight:700;
+cursor:pointer;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.feature{
+background:#111;
+padding:30px;
+border-radius:20px;
+}
+
+footer{
+padding:50px;
+text-align:center;
+color:#777;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(100px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+.hamburger{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    nav ul{
+        position:absolute;
+        top:80px;
+        left:-100%;
+        width:100%;
+        flex-direction:column;
+        background:#111;
+        padding:30px;
+        transition:.4s;
+    }
+
+    nav ul.active{
+        left:0;
+    }
+
+    .hamburger{
+        display:block;
+    }
+}
+.account{
+position:relative;
+display:flex;
+align-items:center;
+}
+.nav-icons{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.nav-icons a{
+color:white;
+text-decoration:none;
+display:flex;
+align-items:center;
+}
+.dropdown{
+display:none;
+position:absolute;
+right:0;
+top:40px;
+background:#111;
+padding:15px;
+border-radius:10px;
+min-width:150px;
+}
+
+.dropdown a{
+display:block;
+padding:10px;
+color:white;
+text-decoration:none;
+}
+
+.dropdown.show{
+display:block;
+}
+
+.cart-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.cart-header span{
+cursor:pointer;
+font-size:24px;
+}
+
+.cart-item{
+background:#1a1a1a;
+padding:18px;
+border-radius:15px;
+margin-bottom:15px;
+border:1px solid #333;
+transition:.3s;
+}
+
+.cart-item:hover{
+border-color:#d4ff00;
+}
+.qty-btn{
+width:35px;
+height:35px;
+border:none;
+background:#d4ff00;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+border-radius:8px;
+margin:0 8px;
+}
+
+.checkout-btn{
+width:100%;
+padding:15px;
+background:#d4ff00;
+border:none;
+border-radius:12px;
+font-weight:700;
+margin-top:15px;
+}
+.nav-search{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:0 30px;
+
+}
+
+.nav-search input{
+
+    width:100%;
+    max-width:420px;
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#1a1a1a;
+
+    color:white;
+
+    outline:none;
+
+    border:2px solid #333;
+
+    transition:.3s;
+
+}
+
+.nav-search input:focus{
+
+    border-color:#d4ff00;
+
+}
+@media(max-width:768px){
+
+    .nav-search{
+
+        width:100%;
+        order:3;
+        margin-top:15px;
+
+    }
+
+    .nav-search input{
+
+        max-width:100%;
+        width:100%;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+    }
+
+}
+.search-wrapper{
+    width:100%;
+    background:#050505;
+    padding:20px 8% 20px;   /* Top Right Bottom Left */
+    margin-top:80px;         /* 👈 Moves it down */
+    position:relative;
+}
+
+#searchInput{
+
+    width:100%;
+    max-width:700px;
+
+    display:block;
+
+    margin:auto;
+
+    padding:16px 20px;
+
+    border-radius:40px;
+
+    border:2px solid #222;
+
+    background:#111;
+
+    color:white;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+#searchInput:focus{
+
+    border-color:#d4ff00;
+
+}
+
+#searchResults{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:#111;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    margin-top:5px;
+
+    display:none;
+
+    border:1px solid #222;
+
+}
+
+.search-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.search-item:hover{
+
+    background:#222;
+
+}
+
+.search-item img{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+.search-item h4{
+
+    color:white;
+
+}
+
+.search-item p{
+
+    color:#d4ff00;
+
+}
+</style>
+<link rel="stylesheet" href="cart.css">
+
+</head>
+
+<body>
+<nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <div class="logo">
+        Ultimate Nutrition
+    </div>
+    <div class="nav-search">
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#accessories">Accessories</a></li>
+        <li><a href="#features">Benefits</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+       <a href="#" id="cartBtn">🛒</a>
+
+        <div class="account">
+
+            <a href="#" id="profileLink">👤</a>
+            <a href="wishlist.html">❤️</a>
+
+            <div class="dropdown" id="accountMenu">
+
+                <a href="profile.html">My Profile</a>
+
+                <a href="orders.html">My Orders</a>
+
+                <a href="#" onclick="logout()">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+<div class="search-wrapper">
+
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="Find the Fuel. Build the Legend.">
+
+    <div id="searchResults"></div>
+
+</div>
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+FUEL YOUR
+<span>PERFORMANCE</span>
+</h1>
+
+<p>
+Premium Sports Nutrition For Strength, Recovery & Growth
+</p>
+
+<a href="#products" class="btn">
+Shop Now
+</a>
+
+</div>
+
+</section>
+
+<section class="section reveal" id="products">
+
+<center><h2 class="section-title">
+Supplements
+</h2></center>
+
+<div class="products">
+<div class="products">
+
+<!-- PROTEIN -->
+<div class="card"
+onclick="window.location.href='product.html?category=whey-concentrate'">
+
+<div class="product-image">💪</div>
+
+<h3>Protein</h3>
+
+<button class="buy">
+View Products
+</button>
+
+</div>
+
+<!-- CREATINE -->
+<div class="card"
+onclick="window.location.href='product.html?category=creatine'">
+
+<div class="product-image">🏋️</div>
+
+<h3>Creatine</h3>
+
+<button class="buy">
+View Products
+</button>
+
+</div>
+
+<!-- PRE WORKOUT -->
+<div class="card"
+onclick="window.location.href='product.html?category=pre-workout'">
+
+<div class="product-image">⚡</div>
+
+<h3>Pre Workout</h3>
+
+<button class="buy">
+View Products
+</button>
+
+</div>
+
+<!-- FAT BURNER -->
+<div class="card"
+onclick="window.location.href='product.html?category=fat-burner'">
+
+<div class="product-image">🔥</div>
+
+<h3>Fat Burner</h3>
+
+<button class="buy">
+View Products
+</button>
+
+</div>
+
+<!-- MASS GAINER -->
+<div class="card"
+onclick="window.location.href='product.html?category=mass-gainer'">
+
+<div class="product-image">🥤</div>
+
+<h3>Mass Gainer</h3>
+
+<button class="buy">
+View Products
+</button>
+
+</div>
+
+<!-- BCAA -->
+<div class="card"
+onclick="window.location.href='product.html?category=bcaa'">
+
+<div class="product-image">💥</div>
+
+<h3>BCAA</h3>
+
+<button class="buy">
+View Products
+</button>
+
+</div>
+
+<!-- VITAMINS -->
+<div class="card"
+onclick="window.location.href='product.html?category=vitamins'">
+
+<div class="product-image">💊</div>
+
+<h3>Vitamins</h3>
+
+<button class="buy">
+View Products
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+</section>
+<!-- gym accesories -->
+<section class="section reveal" id="accessories">
+
+<center>
+</section>
+
+<!-- FEATURES -->
+
+<section class="section reveal" id="features">
+
+    <h2 class="section-title">
+        Why Choose Us
+    </h2>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>Premium Ingredients</h3>
+            <p>High quality tested supplements.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Fast Delivery</h3>
+            <p>Nationwide shipping and tracking.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Trusted By Athletes</h3>
+            <p>Designed for serious performance.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Secure Payments</h3>
+            <p>100% safe checkout experience.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CART -->
+
+<div id="cartSidebar" class="cart-sidebar">
+
+    <div class="cart-header">
+        <h2>My Cart</h2>
+        <span onclick="closeCart()">✖</span>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+        <h3 id="cartTotal">₹0</h3>
+
+        <button class="checkout-btn">
+            Checkout
+        </button>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Ultimate Nutrition. All Rights Reserved.
+</footer>
+
+
+<script>
+    function toggleMenu(){
+    document.querySelector("nav ul")
+    .classList.toggle("active");
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener('click',function(e){
+
+const target =
+this.getAttribute('href');
+
+if(target === "#"){
+return;
+}
+
+e.preventDefault();
+
+const element =
+document.querySelector(target);
+
+if(element){
+
+element.scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+});
+
+});
+
+const reveals=document.querySelectorAll(".reveal");
+
+function reveal(){
+reveals.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+const height=window.innerHeight;
+
+if(top<height-100){
+el.classList.add("active");
+}
+});
+}
+
+window.addEventListener("scroll",reveal);
+reveal();
+const user =
+JSON.parse(localStorage.getItem("user"));
+
+const loggedIn =
+localStorage.getItem("loggedIn");
+
+if(user && loggedIn){
+
+document.getElementById("profileLink")
+.innerHTML = user.name;
+
+}
+const profileLink =
+document.getElementById("profileLink");
+
+const accountMenu =
+document.getElementById("accountMenu");
+
+profileLink.addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+if(!loggedIn){
+
+window.location.href="login.html";
+return;
+
+}
+
+accountMenu.classList.toggle("show");
+
+});
+function logout(){
+
+localStorage.removeItem("loggedIn");
+
+window.location.href="index.html";
+
+}
+
+</script>
+<script src="products.js"></script>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("keyup", function () {
+
+    const keyword = this.value.toLowerCase().trim();
+
+    searchResults.innerHTML = "";
+
+    if (keyword === "") {
+        searchResults.style.display = "none";
+        return;
+    }
+
+    let found = false;
+
+    for (let category in products) {
+
+        products[category].forEach(product => {
+
+            if (
+                product.name.toLowerCase().includes(keyword) ||
+                product.description.toLowerCase().includes(keyword)
+            ) {
+
+                found = true;
+
+                searchResults.innerHTML += `
+                    <div class="search-item"
+                    onclick="window.location.href='detail.html?id=${product.id}'">
+
+                        <img src="${product.image}" alt="">
+
+                        <div>
+                            <h4>${product.name}</h4>
+                            <p>₹${product.price}</p>
+                        </div>
+
+                    </div>
+                `;
+            }
+
+        });
+
+    }
+
+    searchResults.style.display = found ? "block" : "none";
+
+});
+</script>
+
+
+
+<script src="cart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+
+    const cartBtn=document.getElementById("cartBtn");
+
+    cartBtn.addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        openCart();
+
+    });
+
+});
+</script>
+</body>
+</html>
+

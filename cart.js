@@ -98,6 +98,18 @@ function renderCart() {
     });
 
     cartTotal.innerHTML = "₹" + total;
+    const checkoutBtn = document.querySelector(".checkout-btn");
+
+if (checkoutBtn) {
+    checkoutBtn.onclick = function () {
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        window.location.href = "checkout.html";
+    };
+}
 
 }
 

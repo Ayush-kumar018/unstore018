@@ -7,7 +7,7 @@
 <title>Products</title>
 
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="cart.css">
+
 <style>
 *{
 margin:0;
@@ -170,7 +170,61 @@ width:100%;
 .hero-content h1{
 font-size:3rem;
 }
+.product-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
 
+.product-top h3{
+    margin:0;
+    flex:1;
+}
+
+.wishlist-btn{
+    font-size:28px;
+    cursor:pointer;
+    margin-left:15px;
+}
+}
+.product-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.product-header h3{
+    flex:1;
+    margin:0;
+    font-size:24px;
+    line-height:1.3;
+}
+
+.wishlist-btn{
+    flex-shrink:0;
+    font-size:28px;
+    cursor:pointer;
+}
+.product-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:12px;
+}
+
+.product-top h3{
+    margin:0;
+    flex:1;
+    color:#fff;
+}
+
+.wishlist-btn{
+    font-size:30px;
+    cursor:pointer;
+    flex-shrink:0;
 }
 </style>
 
@@ -186,7 +240,7 @@ font-size:3rem;
 <h2>SHOP MORE</h2>
 
 <ul>
-<li><a href="product.html?category=whey-concentrate">Protein</a></li>
+<li><a href="product.html?category=whey-concentrate">Whey Protein</a></li>
 <li><a href="product.html?category=creatine">Creatine</a></li>
 <li><a href="product.html?category=pre-workout">Pre Workout</a></li>
 <li><a href="product.html?category=fat-burner">Fat Burner</a></li>
@@ -220,31 +274,7 @@ Premium whey protein for muscle growth, recovery and strength.
 </div>
 </div>
 
-<div id="cartSidebar" class="cart-sidebar">
-
-    <div class="cart-header">
-        <h2>My Cart</h2>
-
-        <span onclick="closeCart()">✖</span>
-
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-footer">
-
-        <h3 id="cartTotal">₹0</h3>
-
-        <button class="checkout-btn">
-            Checkout
-        </button>
-
-    </div>
-
-</div>
-
 <script src="products.js"></script>
-<script src="cart.js"></script>
 <script src="app.js"></script>
 
 </body>

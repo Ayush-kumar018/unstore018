@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | Ultimate Nutrition</title>
+
+<link rel="stylesheet" href="checkout.css">
+
+</head>
+
+<body>
+
+<div class="checkout-container">
+
+    <!-- LEFT -->
+
+    <div class="checkout-form">
+
+        <h1>Checkout</h1>
+
+        <h3>Delivery Information</h3>
+
+        <form id="checkoutForm">
+
+            <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required>
+
+            <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required>
+
+            <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            required>
+
+            <textarea
+            id="address"
+            placeholder="Full Address"
+            rows="4"
+            required></textarea>
+
+            <input
+            type="text"
+            id="city"
+            placeholder="City"
+            required>
+
+            <input
+            type="text"
+            id="pincode"
+            placeholder="Pincode"
+            required>
+
+        </form>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="order-summary">
+
+        <h2>Order Summary</h2>
+
+        <div id="orderItems"></div>
+
+        <hr>
+
+        <div class="summary-row">
+
+            <span>Subtotal</span>
+
+            <span id="subtotal">
+                ₹0
+            </span>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Shipping</span>
+
+            <span style="color:lime;">
+                FREE
+            </span>
+
+        </div>
+
+        <div class="summary-row total">
+
+            <span>Total</span>
+
+            <span id="total">
+                ₹0
+            </span>
+
+        </div>
+
+        <button id="payBtn">
+
+            Proceed To Payment
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="checkout.js"></script>
+
+</body>
+</html>

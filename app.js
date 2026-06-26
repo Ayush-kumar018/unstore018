@@ -72,26 +72,35 @@ if (!category) {
 
     container.innerHTML += `
 
-      <div class="product"
-onclick="window.location.href='detail.html?id=${product.id}'">
+      <div class="product-info">
 
-        <img src="${product.image}" alt="${product.name}">
+    <div class="product-top">
 
-        <div class="product-info">
+        <h3>${product.name}</h3>
+<span class="wishlist-btn"
+onclick="event.stopPropagation();addToWishlist(${product.id})">
+    ${
+        (JSON.parse(localStorage.getItem("wishlist")) || [])
+        .some(item => item.id == product.id)
+        ? "❤️"
+        : "🤍"
+    }
+</span>
 
-          <h3>${product.name}</h3>
+    </div>
 
-          <p>${product.description}</p>
+    <p>${product.description}</p>
 
-          <div class="price">
-            ₹${product.price}
-          </div>
-          <button class="btn"
-onclick="event.stopPropagation();addToCart(${product.id})">
-Add To Cart
-</button>
+    <div class="price">
+        ₹${product.price}
+    </div>
 
-        </div>
+    <button class="btn"
+    onclick="event.stopPropagation();addToCart(${product.id})">
+        Add To Cart
+    </button>
+
+</div>
 
       </div>
 
@@ -145,12 +154,58 @@ localStorage.setItem(
 "cart",
 JSON.stringify(cart)
 );
-
-// Update global cart used by cart.js
-window.cart = JSON.parse(localStorage.getItem("cart"));
-
 renderCart();
 openCart();
+
+alert(selectedProduct.name + " added to cart");
+
+}
+function addToWishlist(id){
+
+    let wishlist =
+    JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    let selectedProduct = null;
+
+    for(let category in products){
+
+        const found = products[category].find(
+            product => product.id == id
+        );
+
+        if(found){
+            selectedProduct = found;
+            break;
+        }
+
+    }
+
+    if(!selectedProduct) return;
+
+    const index = wishlist.findIndex(
+        item => item.id == id
+    );
+
+    if(index > -1){
+
+        wishlist.splice(index,1);
+
+        alert("Removed from Wishlist 💔");
+
+    }else{
+
+        wishlist.push(selectedProduct);
+
+        alert("Added to Wishlist ❤️");
+
+    }
+
+    localStorage.setItem(
+        "wishlist",
+        JSON.stringify(wishlist)
+    );
+
+    location.reload(); // refresh heart icons
 }
 
 }
