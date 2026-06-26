@@ -4,6 +4,54 @@ const category = params.get("category");
 const container = document.getElementById("productsContainer");
 const title = document.getElementById("title");
 const subtitle = document.getElementById("subtitle");
+let currentProducts = [];
+function renderProducts(productList){
+    currentProducts = [...productList];
+
+    container.innerHTML = "";
+
+    productList.forEach(product => {
+
+        // Product HTML will go here
+       container.innerHTML += `
+
+<div class="product-info">
+
+    <div class="product-top">
+
+        <h3>${product.name}</h3>
+
+        <span class="wishlist-btn"
+        onclick="event.stopPropagation();addToWishlist(${product.id})">
+
+        ${
+        (JSON.parse(localStorage.getItem("wishlist")) || [])
+        .some(item => item.id == product.id)
+        ? "❤️"
+        : "🤍"
+        }
+
+        </span>
+
+    </div>
+
+    <p>${product.description}</p>
+
+    <div class="price">
+        ₹${product.price}
+    </div>
+
+    <button class="btn"
+    onclick="event.stopPropagation();addToCart(${product.id})">
+        Add To Cart
+    </button>
+
+</div>
+
+`;
+    });
+
+}
 
 /* CATEGORY DATA */
 
@@ -68,45 +116,7 @@ if (!category) {
 
   /* LOAD PRODUCTS */
 
-  products[category].forEach(product => {
-
-    container.innerHTML += `
-
-      <div class="product-info">
-
-    <div class="product-top">
-
-        <h3>${product.name}</h3>
-<span class="wishlist-btn"
-onclick="event.stopPropagation();addToWishlist(${product.id})">
-    ${
-        (JSON.parse(localStorage.getItem("wishlist")) || [])
-        .some(item => item.id == product.id)
-        ? "❤️"
-        : "🤍"
-    }
-</span>
-
-    </div>
-
-    <p>${product.description}</p>
-
-    <div class="price">
-        ₹${product.price}
-    </div>
-
-    <button class="btn"
-    onclick="event.stopPropagation();addToCart(${product.id})">
-        Add To Cart
-    </button>
-
-</div>
-
-      </div>
-
-    `;
-
-  });
+  renderProducts(products[category]);
   function addToCart(id){
     alert("Button clicked");
 
@@ -209,3 +219,6 @@ function addToWishlist(id){
 }
 
 }
+// ===========================
+// FILTER DRAWER
+// ==================
