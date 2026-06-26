@@ -408,3 +408,126 @@ description:"Supports heart, brain and joint health"
 
   
 };
+// ===========================
+// FILTER DRAWER
+// ===========================
+
+const openFilter = document.getElementById("openFilter");
+const closeFilter = document.getElementById("closeFilter");
+const filterDrawer = document.getElementById("filterDrawer");
+
+openFilter.addEventListener("click", () => {
+    filterDrawer.style.display = "flex";
+});
+
+closeFilter.addEventListener("click", () => {
+    filterDrawer.style.display = "none";
+});
+
+filterDrawer.addEventListener("click", (e) => {
+
+    if (e.target === filterDrawer) {
+        filterDrawer.style.display = "none";
+    }
+
+});
+const applyFilter = document.getElementById("applyFilter");
+
+applyFilter.addEventListener("click", () => {
+
+    const selectedBudget = document.querySelector(
+        'input[name="budget"]:checked'
+    ).value;
+
+    let filteredProducts = [...products[category]];
+
+    if(selectedBudget !== "all"){
+
+        filteredProducts = filteredProducts.filter(product =>
+            product.price <= Number(selectedBudget)
+        );
+
+    }
+
+    renderProducts(filteredProducts);
+
+    filterDrawer.style.display = "none";
+
+});
+const resetFilter = document.getElementById("resetFilter");
+
+resetFilter.addEventListener("click", () => {
+
+    document.querySelector(
+        'input[name="budget"][value="all"]'
+    ).checked = true;
+
+    renderProducts(products[category]);
+
+    filterDrawer.style.display = "none";
+
+});
+// ===========================
+// SORT DRAWER
+// ===========================
+
+const openSort = document.getElementById("openSort");
+const closeSort = document.getElementById("closeSort");
+const sortDrawer = document.getElementById("sortDrawer");
+
+openSort.addEventListener("click", () => {
+    sortDrawer.style.display = "flex";
+});
+
+closeSort.addEventListener("click", () => {
+    sortDrawer.style.display = "none";
+});
+
+sortDrawer.addEventListener("click", (e) => {
+    if (e.target === sortDrawer) {
+        sortDrawer.style.display = "none";
+    }
+});
+const applySort = document.getElementById("applySort");
+
+applySort.addEventListener("click", () => {
+
+    const sortValue = document.querySelector(
+        'input[name="sort"]:checked'
+    ).value;
+
+   let sortedProducts = [...currentProducts];
+
+    if(sortValue === "low-high"){
+
+        sortedProducts.sort((a,b) => a.price - b.price);
+
+    }
+
+    else if(sortValue === "high-low"){
+
+        sortedProducts.sort((a,b) => b.price - a.price);
+
+    }
+
+    else if(sortValue === "a-z"){
+
+        sortedProducts.sort((a,b) =>
+            a.name.localeCompare(b.name)
+        );
+
+    }
+
+    else if(sortValue === "z-a"){
+
+        sortedProducts.sort((a,b) =>
+            b.name.localeCompare(a.name)
+        );
+
+    }
+
+    renderProducts(sortedProducts);
+
+    sortDrawer.style.display = "none";
+
+});
