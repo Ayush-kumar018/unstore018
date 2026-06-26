@@ -154,7 +154,176 @@ cursor:pointer;
 }
 
 /* MOBILE */
+/* FILTER BUTTON */
 
+.top-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    padding:30px 8% 0;
+}
+
+.action-btn{
+    background:#151515;
+    color:#fff;
+    border:1px solid #2a2a2a;
+    border-radius:50px;
+    padding:14px 28px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.action-btn:hover{
+    background:#d4ff00;
+    color:#000;
+}
+/* ===============================
+   FILTER DRAWER
+=================================*/
+
+.filter-drawer{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(6px);
+
+    display:none;
+
+    justify-content:flex-end;
+    align-items:flex-end;
+
+    z-index:9999;
+}
+
+.filter-content{
+
+    width:100%;
+    max-width:420px;
+
+    background:#111;
+
+    border-radius:25px 25px 0 0;
+
+    padding:25px;
+
+    animation:slideUp .35s ease;
+}
+
+.filter-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.filter-header h2{
+
+    font-size:24px;
+}
+
+.filter-header button{
+
+    background:none;
+    border:none;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+}
+
+.filter-group h3{
+
+    margin-bottom:15px;
+}
+
+.filter-group label{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 0;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    border-bottom:1px solid #222;
+}
+
+.filter-group input{
+
+    accent-color:#d4ff00;
+
+    width:18px;
+    height:18px;
+}
+
+.apply-btn{
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:16px;
+
+    background:#d4ff00;
+
+    color:#000;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+.filter-actions{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.reset-btn{
+    flex:1;
+    padding:16px;
+    background:transparent;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:14px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.reset-btn:hover{
+    border-color:#d4ff00;
+    color:#d4ff00;
+}
+
+.apply-btn{
+    flex:2;
+}
+@keyframes slideUp{
+
+    from{
+        transform:translateY(100%);
+    }
+
+    to{
+        transform:translateY(0);
+    }
+}
 @media(max-width:900px){
 
 .hero-layout{
@@ -267,15 +436,133 @@ Premium whey protein for muscle growth, recovery and strength.
 
 <section class="products">
 
-<div class="grid" id="productsContainer"></div>
+    <!-- Filter Button -->
+    
+
+        <div class="top-actions">
+
+    <button id="openFilter" class="action-btn">
+        ☰ Filter
+    </button>
+
+    <button id="openSort" class="action-btn">
+        ⇅ Sort
+    </button>
+
+</div>
+   
+
+    <!-- Products -->
+    <div class="grid" id="productsContainer"></div>
 
 </section>
+</div>
+</div>
+
+<div id="filterDrawer" class="filter-drawer">
+
+    <div class="filter-content">
+
+        <div class="filter-header">
+            <h2>Filters</h2>
+
+            <button id="closeFilter">✕</button>
+        </div>
+
+        <div class="filter-group">
+
+            <h3>Budget</h3>
+
+            <label>
+                <input type="radio" name="budget" value="all" checked>
+                All
+            </label>
+
+            <label>
+                <input type="radio" name="budget" value="1000">
+                Under ₹1000
+            </label>
+
+            <label>
+                <input type="radio" name="budget" value="2000">
+                Under ₹2000
+            </label>
+
+            <label>
+                <input type="radio" name="budget" value="3000">
+                Under ₹3000
+            </label>
+
+            <label>
+                <input type="radio" name="budget" value="5000">
+                Under ₹5000
+            </label>
+
+        </div>
+<div class="filter-actions">
+
+    <button id="resetFilter" class="reset-btn">
+        Reset
+    </button>
+
+    <button id="applyFilter" class="apply-btn">
+        Apply
+    </button>
 
 </div>
-</div>
+
+    </div>
+    </div>
+    <!-- SORT DRAWER -->
+
+<div id="sortDrawer" class="filter-drawer">
+
+    <div class="filter-content">
+
+        <div class="filter-header">
+
+            <h2>Sort By</h2>
+
+            <button id="closeSort">✕</button>
+
+        </div>
+
+        <div class="filter-group">
+
+            <label>
+                <input type="radio" name="sort" value="low-high">
+                Price : Low to High
+            </label>
+
+            <label>
+                <input type="radio" name="sort" value="high-low">
+                Price : High to Low
+            </label>
+
+            <label>
+                <input type="radio" name="sort" value="a-z">
+                Name : A → Z
+            </label>
+
+            <label>
+                <input type="radio" name="sort" value="z-a">
+                Name : Z → A
+            </label>
+
+        </div>
+
+        <button id="applySort" class="apply-btn">
+            Apply
+        </button>
+
+    </div>
+
+
 
 <script src="products.js"></script>
 <script src="app.js"></script>
+<!-- Filter Drawer -->
 
+</div>
 </body>
 </html>
