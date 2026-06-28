@@ -395,11 +395,495 @@ font-size:3rem;
     cursor:pointer;
     flex-shrink:0;
 }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(10px);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 50px;
+
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+    margin-left:50px;
+}
+.logo{
+    font-size:2rem;
+    font-weight:900;
+    color:#d4ff00;
+}
+.nav-icons{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+.hamburger{
+
+    display:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    color:white;
+
+}
+@media (max-width:768px){
+
+    nav{
+
+        padding:0 15px;
+
+        height:70px;
+
+    }
+
+    /* Hamburger LEFT */
+
+    .hamburger{
+
+        display:block;
+
+        font-size:30px;
+
+        cursor:pointer;
+
+        order:1;
+
+    }
+
+    /* Logo CENTER */
+
+    .logo{
+
+        flex:1;
+
+        text-align:center;
+
+        font-size:22px;
+
+        order:2;
+
+    }
+
+    /* Icons RIGHT */
+
+    .nav-icons{
+
+        order:3;
+
+        gap:15px;
+
+    }
+
+    /* Hide desktop menu */
+
+    nav ul{
+
+        position:absolute;
+
+        top:70px;
+
+        left:-100%;
+
+        width:100%;
+
+        background:#111;
+
+        flex-direction:column;
+
+        gap:25px;
+
+        padding:25px 0;
+
+        margin:0;
+
+        transition:.3s;
+
+    }
+
+    nav ul.active{
+
+        left:0;
+
+    }
+
+}
+@media(max-width:480px){
+
+    .logo{
+
+        font-size:20px;
+
+    }
+
+    .nav-icons{
+
+        gap:12px;
+
+    }
+
+    nav{
+
+        padding:12px 15px;
+
+    }
+
+}
+.account{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+#username{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    white-space:nowrap;
+}
+.nav-icons{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-icons a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+}
+.dropdown{
+display:none;
+position:absolute;
+right:0;
+top:40px;
+background:#111;
+padding:15px;
+border-radius:10px;
+min-width:150px;
+}
+
+.dropdown a{
+display:block;
+padding:10px;
+color:white;
+text-decoration:none;
+}
+
+.dropdown.show{
+display:block;
+}
+
+.cart-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.cart-header span{
+cursor:pointer;
+font-size:24px;
+}
+
+.cart-item{
+background:#1a1a1a;
+padding:18px;
+border-radius:15px;
+margin-bottom:15px;
+border:1px solid #333;
+transition:.3s;
+}
+
+.cart-item:hover{
+border-color:#d4ff00;
+}
+.qty-btn{
+width:35px;
+height:35px;
+border:none;
+background:#d4ff00;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+border-radius:8px;
+margin:0 8px;
+}
+
+.checkout-btn{
+width:100%;
+padding:15px;
+background:#d4ff00;
+border:none;
+border-radius:12px;
+font-weight:700;
+margin-top:15px;
+}
+.nav-search{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:0 30px;
+
+}
+
+.nav-search input{
+
+    width:100%;
+    max-width:420px;
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#1a1a1a;
+
+    color:white;
+
+    outline:none;
+
+    border:2px solid #333;
+
+    transition:.3s;
+
+}
+nav ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:#d4ff00;
+
+}
+
+.nav-search input:focus{
+
+    border-color:#d4ff00;
+
+}
+@media(max-width:768px){
+
+    .nav-search{
+
+        width:100%;
+        order:3;
+        margin-top:15px;
+
+    }
+
+    .nav-search input{
+
+        max-width:100%;
+        width:100%;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+    }
+
+}
+.search-wrapper{
+
+    width:100%;
+
+    margin-top:85px;
+
+    padding:15px 7%;
+
+    background:#050505;
+
+}
+
+#searchInput{
+
+    width:100%;
+    max-width:700px;
+
+    display:block;
+
+    margin:auto;
+
+    padding:16px 20px;
+
+    border-radius:40px;
+
+    border:2px solid #222;
+
+    background:#111;
+
+    color:white;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+#searchInput:focus{
+
+    border-color:#d4ff00;
+
+}
+
+#searchResults{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:#111;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    margin-top:5px;
+
+    display:none;
+
+    border:1px solid #222;
+
+}
+
+.search-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.search-item:hover{
+
+    background:#222;
+
+}
+
+.search-item img{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+.search-item h4{
+
+    color:white;
+
+}
+
+.search-item p{
+
+    color:#d4ff00;
+
+}
 </style>
 
 </head>
 
 <body>
+<nav>
+
+    <!-- Left -->
+    <div class="hamburger" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <!-- Center -->
+    <div class="logo">
+        Ultimate Nutrition
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul id="navMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#accessories">Accessories</a></li>
+        <li><a href="#features">Benefits</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <!-- Right -->
+    <div class="nav-icons">
+
+        <a href="#" id="cartBtn">🛒</a>
+
+        <div class="account">
+
+    <a href="#" id="profileLink">👤</a>
+
+    <span id="username"></span>
+
+    <a href="wishlist.html">❤️</a>
+
+    <div class="dropdown" id="accountMenu">
+
+        </div>
+
+    </div>
+
+</nav>
+<div class="search-wrapper">
+
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="Find the Fuel. Build the Legend.">
+
+    <div id="searchResults"></div>
+
+</div>
 <section class="hero">
 
 <div class="hero-layout">
@@ -562,7 +1046,16 @@ Premium whey protein for muscle growth, recovery and strength.
 <script src="products.js"></script>
 <script src="app.js"></script>
 <!-- Filter Drawer -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const cartBtn = document.getElementById("cartBtn");
 
+    cartBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openCart();
+    });
+});
+</script>
 </div>
 </body>
 </html>

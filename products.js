@@ -142,74 +142,74 @@ const products = {
 
 {
 id:16,
-name:"Creatine Monohydrate",
-price:799,
+name:"Wellcore Creatine Monohydrate 122g (33 Servings)",
+price:490,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:"Pure Micronised Creatine for Strength, Power & Faster Recovery",
 },
 
 {
 id:17,
-name:"Creatine Monohydrate",
-price:799,
+name:"Wellcore Creatine Monohydrate 307g (83 Servings)",
+price:890,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:" Pure Micronised Creatine for Strength, Power & Recovery"
 },
 
 {
 id:18,
-name:"Creatine Monohydrate",
-price:799,
+name:"MuscleBlaze MB Creatine Monohydrate CreAMP 250g (80 Servings)",
+price:790,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:"Unflavoured Creatine for Strength, Power & Recovery"
 },
 
 {
 id:19,
-name:"Creatine Monohydrate",
-price:799,
+name:"MuscleBlaze MB Creatine Monohydrate CreAMP",
+price:490,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:"100g(33 Servings), Unflavoured"
 },
 
 {
 id:20,
-name:"Creatine Monohydrate",
-price:799,
+name:"MuscleBlaze MB Creatine Monohydrate CreAMP",
+price:490,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:"120g (30 Servings),Citrus Blast"
 },
 
 {
 id:21,
-name:"Creatine Monohydrate",
-price:799,
+name:"MuscleBlaze MB Creatine Monohydrate CreAMP",
+price:840,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:"320g (80 Servings),Citrus Blast"
 },
 
 {
 id:22,
-name:"Creatine Monohydrate",
-price:799,
+name:"GNC Creatine + Electrolytes Hydration & Muscle Recovery Supplement ",
+price:990,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:"250g (50 Servings), Cola flavor"
 },
 
 {
 id:23,
-name:"Creatine Monohydrate",
-price:799,
+name:"GNC Creatine Monohydrate Powerful Muscle Strength & Recovery Supplement",
+price:490,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:"100g (33 Servings), Unflavoured"
 },
 
 {
 id:24,
-name:"Creatine Monohydrate",
-price:799,
+name:"GNC Creatine + Electrolytes Powerful Hydration & Muscle Recovery Supplement ",
+price:890,
 image:"images/creatine.jpg",
-description:"Increase strength and power"
+description:"250g (80 Servings), Unflavoured"
 },
 
 {
