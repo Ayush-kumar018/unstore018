@@ -1,15 +1,18 @@
-// Register
+console.log("Supabase object:", supabase);
+console.log("Supabase auth:", supabase.auth);
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
 
-    registerForm.addEventListener("submit", (e) => {
+    registerForm.addEventListener("submit", async (e) => {
 
         e.preventDefault();
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
+        console.log("Register button clicked");
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
         const password = document.getElementById("password").value;
         const confirmPassword = document.getElementById("confirmPassword").value;
 
@@ -18,54 +21,34 @@ if (registerForm) {
             return;
         }
 
-        const user = {
-            name,
-            email,
-            phone,
-            password
-        };
+        try {
 
-        localStorage.setItem("user", JSON.stringify(user));
+            const { data, error } = await supabase.auth.signUp({
+                email,
+                password,
+                options: {
+                    data: {
+                        full_name: name,
+                        phone: phone
+                    }
+                }
+            });
 
-        console.log(localStorage.getItem("user"));
+            console.log(data);
+            console.log(error);
 
-        alert("Registration Successful");
+            if (error) {
+                alert(error.message);
+                return;
+            }
 
-        window.location.href = "login.html";
-    });
+            alert("Registration Successful!");
+            window.location.href = "login.html";
 
-} // <-- Register block ends here
+        } catch (err) {
 
-
-// Login
-const loginForm = document.getElementById("loginForm");
-
-if (loginForm) {
-
-    loginForm.addEventListener("submit", (e) => {
-
-        e.preventDefault();
-
-        const email = document.getElementById("loginEmail").value;
-        const password = document.getElementById("loginPassword").value;
-
-        const user = JSON.parse(localStorage.getItem("user"));
-
-        if (
-            user &&
-            user.email === email &&
-            user.password === password
-        ) {
-
-            localStorage.setItem("loggedIn", "true");
-
-            alert("Login Successful");
-
-            window.location.href = "01.html";;
-
-        } else {
-
-            alert("Invalid Email or Password");
+            console.error(err);
+            alert(err.message);
 
         }
 

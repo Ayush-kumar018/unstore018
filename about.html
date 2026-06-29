@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/*=========================
+        HERO
+==========================*/
+
+.about-hero{
+    position:relative;
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    background:url("store3.jpg") center/cover no-repeat;
+    overflow:hidden;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.82));
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    max-width:900px;
+    animation:fadeUp 1s ease;
+}
+
+.hero-tag{
+    display:inline-block;
+    background:#d4ff00;
+    color:#000;
+    padding:10px 22px;
+    border-radius:40px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:25px;
+}
+
+.hero-content h1{
+    font-size:68px;
+    line-height:1.15;
+    margin-bottom:25px;
+    font-weight:900;
+}
+
+.hero-content span{
+    color:#d4ff00;
+}
+
+.hero-content p{
+    font-size:20px;
+    color:#d2d2d2;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:18px 42px;
+    background:#d4ff00;
+    color:#000;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:50px;
+    transition:.35s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(212,255,0,.35);
+}
+
+/*=========================
+        STORY
+==========================*/
+
+.story{
+    padding:100px 8%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.story-image img{
+    width:100%;
+    border-radius:25px;
+    display:block;
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+    transition:.4s;
+}
+
+.story-image img:hover{
+    transform:scale(1.03);
+}
+
+.story-content span{
+    color:#d4ff00;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.story-content h2{
+    font-size:46px;
+    margin:20px 0;
+    line-height:1.3;
+}
+
+.story-content p{
+    color:#bbb;
+    line-height:1.9;
+    margin-bottom:20px;
+    font-size:17px;
+}
+
+.story-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:30px;
+}
+
+.story-list div{
+    background:#111;
+    padding:18px;
+    border-radius:15px;
+    border:1px solid #222;
+    transition:.3s;
+}
+
+.story-list div:hover{
+    border-color:#d4ff00;
+    transform:translateY(-5px);
+}
+
+/*=========================
+        STATS
+==========================*/
+
+.stats{
+    padding:0 8% 100px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.stat-box{
+    background:#111;
+    padding:45px;
+    border-radius:20px;
+    border:1px solid #222;
+    text-align:center;
+    transition:.35s;
+}
+
+.stat-box:hover{
+    transform:translateY(-8px);
+    border-color:#d4ff00;
+}
+
+.stat-box h2{
+    font-size:48px;
+    color:#d4ff00;
+    margin-bottom:12px;
+}
+
+.stat-box p{
+    color:#aaa;
+    font-size:18px;
+}
+
+/*=========================
+        WHY US
+==========================*/
+
+.why-us{
+    padding:100px 8%;
+}
+
+.section-heading{
+    max-width:800px;
+    margin:auto;
+    margin-bottom:70px;
+    text-align:center;
+}
+
+.section-heading span{
+    color:#d4ff00;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.section-heading h2{
+    font-size:48px;
+    margin:18px 0;
+}
+
+.section-heading p{
+    color:#aaa;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.why-card{
+    background:#111;
+    border:1px solid #222;
+    border-radius:22px;
+    padding:40px 30px;
+    text-align:center;
+    transition:.35s;
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+    border-color:#d4ff00;
+    box-shadow:0 20px 40px rgba(212,255,0,.15);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.why-card h3{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.why-card p{
+    color:#aaa;
+    line-height:1.8;
+}
+
+/*=========================
+      ANIMATION
+==========================*/
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(60px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+/*=========================
+      STORE GALLERY
+==========================*/
+
+.gallery-section{
+
+padding:100px 8%;
+
+}
+
+.gallery{
+
+position:relative;
+
+max-width:1100px;
+
+margin:auto;
+
+height:600px;
+
+overflow:hidden;
+
+border-radius:25px;
+
+box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+}
+
+.gallery-img{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+opacity:0;
+
+transition:opacity .8s ease;
+
+}
+
+.gallery-img.active{
+
+opacity:1;
+
+}
+
+#prevBtn,
+#nextBtn{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(0,0,0,.6);
+
+color:white;
+
+font-size:28px;
+
+cursor:pointer;
+
+transition:.3s;
+
+z-index:5;
+
+}
+
+#prevBtn{
+
+left:20px;
+
+}
+
+#nextBtn{
+
+right:20px;
+
+}
+
+#prevBtn:hover,
+#nextBtn:hover{
+
+background:#d4ff00;
+
+color:black;
+
+}
+
+.gallery-dots{
+
+margin-top:30px;
+
+text-align:center;
+
+}
+
+.gallery-dot{
+
+display:inline-block;
+
+width:14px;
+
+height:14px;
+
+background:#555;
+
+border-radius:50%;
+
+margin:0 8px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.gallery-dot.active{
+
+background:#d4ff00;
+
+transform:scale(1.2);
+
+}
+/*=========================
+      MISSION
+==========================*/
+
+.mission-section{
+
+padding:100px 8%;
+
+}
+
+.mission-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:40px;
+
+margin-top:60px;
+
+}
+
+.mission-card{
+
+background:#111;
+
+border:1px solid #222;
+
+border-radius:25px;
+
+padding:45px;
+
+transition:.35s;
+
+}
+
+.mission-card:hover{
+
+transform:translateY(-10px);
+
+border-color:#d4ff00;
+
+box-shadow:0 20px 45px rgba(212,255,0,.15);
+
+}
+
+.mission-icon{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+background:#d4ff00;
+
+color:#000;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:38px;
+
+margin-bottom:25px;
+
+}
+
+.mission-card h3{
+
+font-size:32px;
+
+margin-bottom:20px;
+
+}
+
+.mission-card p{
+
+color:#bdbdbd;
+
+line-height:1.9;
+
+font-size:17px;
+
+}
+/*=========================
+        BRANDS
+==========================*/
+
+.brands-section{
+
+padding:100px 8%;
+
+}
+
+.brands-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+.brand-card{
+
+background:#111;
+
+border:1px solid #222;
+
+border-radius:20px;
+
+height:170px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:.35s;
+
+}
+
+.brand-card:hover{
+
+border-color:#d4ff00;
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(212,255,0,.15);
+
+}
+
+.brand-card img{
+
+width:170px;
+
+max-width:80%;
+
+max-height:80%;
+
+object-fit:contain;
+
+filter:grayscale(100%);
+
+transition:.35s;
+
+}
+
+.brand-card:hover img{
+
+filter:grayscale(0);
+
+transform:scale(1.08);
+
+}
+/*=========================
+     CUSTOMER PROMISE
+==========================*/
+
+.promise-section{
+
+padding:100px 8%;
+
+}
+
+.promise-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+.promise-card{
+
+background:#111;
+
+border:1px solid #222;
+
+border-radius:22px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.promise-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#d4ff00;
+
+box-shadow:0 20px 40px rgba(212,255,0,.15);
+
+}
+
+.promise-icon{
+
+font-size:52px;
+
+margin-bottom:20px;
+
+}
+
+.promise-card h3{
+
+margin-bottom:15px;
+
+font-size:24px;
+
+}
+
+.promise-card p{
+
+color:#aaa;
+
+line-height:1.8;
+
+}
+/*=========================
+      VISIT STORE
+==========================*/
+
+.visit-store{
+
+padding:100px 8%;
+
+}
+
+.visit-container{
+
+display:grid;
+
+grid-template-columns:420px 1fr;
+
+gap:40px;
+
+margin-top:60px;
+
+}
+
+.store-details{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.detail-card{
+
+background:#111;
+
+border:1px solid #222;
+
+border-radius:20px;
+
+padding:25px;
+
+transition:.35s;
+
+}
+
+.detail-card:hover{
+
+border-color:#d4ff00;
+
+transform:translateY(-5px);
+
+}
+
+.detail-card h3{
+
+margin-bottom:12px;
+
+font-size:22px;
+
+}
+
+.detail-card p{
+
+color:#aaa;
+
+line-height:1.8;
+
+}
+
+.map iframe{
+
+width:100%;
+
+height:100%;
+
+min-height:520px;
+
+border:none;
+
+border-radius:20px;
+
+}
+
+.store-buttons{
+
+display:flex;
+
+gap:20px;
+
+margin-top:10px;
+
+}
+
+.store-btn{
+
+flex:1;
+
+padding:16px;
+
+background:#d4ff00;
+
+color:#000;
+
+text-align:center;
+
+text-decoration:none;
+
+font-weight:700;
+
+border-radius:50px;
+
+transition:.35s;
+
+}
+
+.store-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.whatsapp{
+
+background:#25D366;
+
+color:white;
+
+}
+/*=========================
+      MOBILE
+==========================*/
+
+@media(max-width:768px){
+
+.about-hero{
+    height:70vh;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:40px;
+}
+
+.hero-content p{
+    font-size:16px;
+}
+
+.hero-btn{
+    padding:15px 28px;
+}
+
+.story{
+    grid-template-columns:1fr;
+}
+
+.story-content{
+    text-align:center;
+}
+
+.story-content h2{
+    font-size:34px;
+}
+
+.story-list{
+    grid-template-columns:1fr;
+}
+
+.stats{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.stat-box{
+    padding:30px;
+}
+
+.stat-box h2{
+    font-size:34px;
+}
+
+.why-grid{
+    grid-template-columns:1fr;
+}
+
+.section-heading h2{
+    font-size:34px;
+}
+.gallery{
+
+height:280px;
+
+}
+
+#prevBtn,
+#nextBtn{
+
+width:45px;
+
+height:45px;
+
+font-size:22px;
+
+}
+.mission-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.mission-card{
+
+padding:35px;
+
+}
+
+.mission-card h3{
+
+font-size:26px;
+
+}
+.brands-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.brand-card{
+
+height:130px;
+
+}
+
+.brand-card img{
+
+width:110px;
+
+}
+.promise-grid{
+
+grid-template-columns:1fr;
+
+}
+.visit-container{
+
+grid-template-columns:1fr;
+
+}
+
+.store-buttons{
+
+flex-direction:column;
+
+}
+
+.map iframe{
+
+min-height:320px;
+
+}
+}
+</style>
+<body>
+    <section class="about-hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<span class="hero-tag" style="color:#000;">
+    ABOUT US
+</span>
+
+<h1>
+
+Building Trust Through
+<span>Authentic Nutrition</span>
+
+</h1>
+
+<p>
+
+Ultimate Nutrition is your trusted destination for
+100% genuine supplements, premium fitness products,
+and expert guidance to help you achieve your fitness goals.
+
+</p>
+
+<a href="product.html" class="hero-btn">
+
+Explore Products
+
+</a>
+
+</div>
+
+</section>
+<!-- OUR STORY -->
+
+<section class="story">
+
+    <div class="story-image">
+
+        <img src="store1.jpg" alt="Ultimate Nutrition Store">
+
+    </div>
+
+    <div class="story-content">
+
+        <span>OUR STORY</span>
+
+        <h2>
+            Helping People Achieve Their Fitness Goals
+        </h2>
+
+        <p>
+
+Ultimate Nutrition was founded with one mission — to provide 100% genuine supplements at affordable prices. We believe every fitness enthusiast deserves authentic products backed by trusted brands and honest guidance.
+
+        </p>
+
+        <p>
+
+Whether you're starting your fitness journey or preparing for competitions, our experienced team helps you choose the right supplements to maximize your results.
+
+        </p>
+
+        <div class="story-list">
+
+            <div>✔ Genuine Supplements</div>
+
+            <div>✔ Premium Brands</div>
+
+            <div>✔ Fitness Consultation</div>
+
+            <div>✔ Best Prices</div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- STORE STATS -->
+
+<section class="stats">
+
+    <div class="stat-box">
+
+        <h2>1200+</h2>
+
+        <p>Products</p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2>50+</h2>
+
+        <p>Brands</p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2>5000+</h2>
+
+        <p>Happy Customers</p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2>5★</h2>
+
+        <p>Customer Service</p>
+
+    </div>
+
+</section>
+<!-- WHY CHOOSE US -->
+
+<section class="why-us">
+
+    <div class="section-heading">
+
+        <span>WHY CHOOSE US</span>
+
+        <h2>Why Thousands Trust Ultimate Nutrition</h2>
+
+        <p>
+            We don't just sell supplements. We help customers
+            achieve their fitness goals with genuine products,
+            expert support and premium service.
+        </p>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="icon">💯</div>
+
+            <h3>100% Genuine</h3>
+
+            <p>
+                Every supplement is sourced from trusted brands and authorized distributors.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon">🚚</div>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+                Quick and secure delivery across India with proper packaging.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon">🏆</div>
+
+            <h3>Premium Brands</h3>
+
+            <p>
+                We stock only trusted national and international supplement brands.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon">💪</div>
+
+            <h3>Expert Guidance</h3>
+
+            <p>
+                Get personalized supplement recommendations based on your goals.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon">🔒</div>
+
+            <h3>Secure Shopping</h3>
+
+            <p>
+                Safe payments and a smooth shopping experience from start to finish.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon">⭐</div>
+
+            <h3>Customer First</h3>
+
+            <p>
+                Our focus is building long-term relationships through honest service.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- STORE GALLERY -->
+
+<section class="gallery-section">
+
+    <div class="section-heading">
+
+        <span>OUR STORE</span>
+
+        <h2>Experience Our Retail Store</h2>
+
+        <p>
+            Visit our store and explore a wide range of genuine supplements,
+            accessories and premium nutrition products.
+        </p>
+
+    </div>
+
+    <div class="gallery">
+
+        <img src="store1.jpg" class="gallery-img active">
+
+        <img src="store2.jpg" class="gallery-img">
+
+        <img src="store3.jpg" class="gallery-img">
+
+        <img src="store4.jpg" class="gallery-img">
+
+        <button id="prevBtn">❮</button>
+
+        <button id="nextBtn">❯</button>
+
+    </div>
+
+    <div class="gallery-dots">
+
+        <span class="gallery-dot active"></span>
+
+        <span class="gallery-dot"></span>
+
+        <span class="gallery-dot"></span>
+
+        <span class="gallery-dot"></span>
+
+    </div>
+
+</section>
+<!-- MISSION & VISION -->
+
+<section class="mission-section">
+
+    <div class="section-heading">
+
+        <span>OUR PURPOSE</span>
+
+        <h2>Mission & Vision</h2>
+
+        <p>
+            We are passionate about helping people become healthier,
+            stronger and more confident through authentic nutrition.
+        </p>
+
+    </div>
+
+    <div class="mission-grid">
+
+        <div class="mission-card">
+
+            <div class="mission-icon">
+                💪
+            </div>
+
+            <h3>Our Mission</h3>
+
+            <p>
+
+To provide 100% genuine supplements, honest guidance and exceptional customer service so every customer can confidently achieve their fitness goals.
+
+            </p>
+
+        </div>
+
+        <div class="mission-card">
+
+            <div class="mission-icon">
+                🏆
+            </div>
+
+            <h3>Our Vision</h3>
+
+            <p>
+
+To become one of India's most trusted supplement retailers by offering premium products, transparent service and an outstanding shopping experience.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- BRANDS -->
+
+<section class="brands-section">
+
+    <div class="section-heading">
+
+        <span>OUR BRANDS</span>
+
+        <h2>Trusted Brands We Offer</h2>
+
+        <p>
+
+We proudly stock genuine supplements from trusted Indian and international brands.
+
+        </p>
+
+    </div>
+
+    <div class="brands-grid">
+
+        <div class="brand-card">
+            <img src="brands/wellcore.png" alt="Wellcore">
+        </div>
+
+        <div class="brand-card">
+            <img src="brands/muscleblaze.png" alt="MuscleBlaze">
+        </div>
+
+        <div class="brand-card">
+            <img src="brands/on.png" alt="Optimum Nutrition">
+        </div>
+
+        <div class="brand-card">
+            <img src="brands/avvatar.png" alt="Avvatar">
+        </div>
+
+        <div class="brand-card">
+            <img src="brands/gnc.png" alt="GNC">
+        </div>
+
+        <div class="brand-card">
+            <img src="brands/myprotein.png" alt="MyProtein">
+        </div>
+
+    </div>
+
+</section>
+<!-- CUSTOMER PROMISE -->
+
+<section class="promise-section">
+
+    <div class="section-heading">
+
+        <span>OUR PROMISE</span>
+
+        <h2>What You Can Expect From Us</h2>
+
+        <p>
+
+We are committed to providing an exceptional shopping experience with genuine products, reliable service, and customer-first support.
+
+        </p>
+
+    </div>
+
+    <div class="promise-grid">
+
+        <div class="promise-card">
+
+            <div class="promise-icon">🛡️</div>
+
+            <h3>100% Genuine Products</h3>
+
+            <p>
+
+Every product is sourced from trusted brands and authorized distributors.
+
+            </p>
+
+        </div>
+
+        <div class="promise-card">
+
+            <div class="promise-icon">📦</div>
+
+            <h3>Safe Packaging</h3>
+
+            <p>
+
+Orders are packed carefully to ensure products reach you in perfect condition.
+
+            </p>
+
+        </div>
+
+        <div class="promise-card">
+
+            <div class="promise-icon">🚚</div>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+
+Quick order processing and reliable delivery across India.
+
+            </p>
+
+        </div>
+
+        <div class="promise-card">
+
+            <div class="promise-icon">💳</div>
+
+            <h3>Secure Payments</h3>
+
+            <p>
+
+Shop confidently with safe and secure payment options.
+
+            </p>
+
+        </div>
+
+        <div class="promise-card">
+
+            <div class="promise-icon">💬</div>
+
+            <h3>Expert Support</h3>
+
+            <p>
+
+Need help choosing supplements? Our team is here to guide you.
+
+            </p>
+
+        </div>
+
+        <div class="promise-card">
+
+            <div class="promise-icon">⭐</div>
+
+            <h3>Customer Satisfaction</h3>
+
+            <p>
+
+Your trust and satisfaction are our highest priorities.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- VISIT STORE -->
+
+<section class="visit-store">
+
+    <div class="section-heading">
+
+        <span>VISIT OUR STORE</span>
+
+        <h2>We're Always Happy To Welcome You</h2>
+
+        <p>
+            Visit our physical store to explore genuine supplements,
+            fitness accessories and receive expert guidance.
+        </p>
+
+    </div>
+
+    <div class="visit-container">
+
+        <div class="store-details">
+
+            <div class="detail-card">
+
+                <h3>📍 Store Address</h3>
+
+                <p>
+
+Ultimate Nutrition
+
+Khajur Wali Gali, Andher
+
+Ghaziabad, Uttar Pradesh
+
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h3>📞 Phone</h3>
+
+                <p>
+
++91 89208 53816
+
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h3>📧 Email</h3>
+
+                <p>
+
+support@ultimatenutrition.in
+
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h3>🕒 Business Hours</h3>
+
+                <p>
+
+Monday – Saturday<br>
+
+10:00 AM – 9:00 PM
+
+                </p>
+
+            </div>
+
+            <div class="store-buttons">
+
+                <a href="tel:+918920853816" class="store-btn">
+
+📞 Call Now
+
+                </a>
+
+                <a href="https://wa.me/918920853816"
+                target="_blank"
+                class="store-btn whatsapp">
+
+💬 WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="map">
+
+            <iframe
+
+src="https://www.google.com/maps?q=Ghaziabad&output=embed"
+
+allowfullscreen
+
+loading="lazy">
+
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+const galleryImages=document.querySelectorAll(".gallery-img");
+
+const galleryDots=document.querySelectorAll(".gallery-dot");
+
+let currentImage=0;
+
+function showGallery(index){
+
+galleryImages.forEach(img=>img.classList.remove("active"));
+
+galleryDots.forEach(dot=>dot.classList.remove("active"));
+
+galleryImages[index].classList.add("active");
+
+galleryDots[index].classList.add("active");
+
+}
+
+function nextGallery(){
+
+currentImage++;
+
+if(currentImage>=galleryImages.length){
+
+currentImage=0;
+
+}
+
+showGallery(currentImage);
+
+}
+
+function prevGallery(){
+
+currentImage--;
+
+if(currentImage<0){
+
+currentImage=galleryImages.length-1;
+
+}
+
+showGallery(currentImage);
+
+}
+
+document.getElementById("nextBtn").onclick=nextGallery;
+
+document.getElementById("prevBtn").onclick=prevGallery;
+
+galleryDots.forEach((dot,index)=>{
+
+dot.onclick=function(){
+
+currentImage=index;
+
+showGallery(index);
+
+};
+
+});
+
+setInterval(nextGallery,3500);
+
+</script>
+</body>
+</html>
