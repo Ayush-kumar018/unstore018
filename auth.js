@@ -1,5 +1,7 @@
-console.log("Supabase object:", supabase);
-console.log("Supabase auth:", supabase.auth);
+const client = window.client;
+
+console.log("Supabase object:", client);
+console.log("Supabase auth:", client.auth);
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
@@ -23,16 +25,16 @@ if (registerForm) {
 
         try {
 
-            const { data, error } = await supabase.auth.signUp({
-                email,
-                password,
-                options: {
-                    data: {
-                        full_name: name,
-                        phone: phone
-                    }
-                }
-            });
+            const { data, error } = await client.auth.signUp({
+    email,
+    password,
+    options:{
+        data:{
+            full_name:name,
+            phone:phone
+        }
+    }
+});
 
             console.log(data);
             console.log(error);
@@ -53,5 +55,109 @@ if (registerForm) {
         }
 
     });
+    
 
 }
+const togglePassword =
+document.getElementById("togglePassword");
+
+const password =
+document.getElementById("loginPassword");
+
+if(togglePassword){
+
+togglePassword.onclick=()=>{
+
+password.type=
+password.type==="password"
+?
+"text"
+:
+"password";
+
+};
+
+}
+// ==========================
+// LOGIN
+// ==========================
+
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+
+    loginForm.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const email = document
+            .getElementById("loginEmail")
+            .value
+            .trim();
+
+        const password = document
+            .getElementById("loginPassword")
+            .value;
+
+        const loginBtn =
+            document.getElementById("loginBtn");
+
+        const message =
+            document.getElementById("loginMessage");
+
+        loginBtn.disabled = true;
+        loginBtn.innerText = "Signing In...";
+
+        message.className = "message";
+        message.innerHTML = "";
+
+        const { data, error } =
+await client.auth.signInWithPassword({
+
+    email,
+    password
+
+});
+
+        if (error) {
+
+            message.classList.add("error");
+            message.innerHTML = error.message;
+
+            loginBtn.disabled = false;
+            loginBtn.innerText = "Login";
+
+            return;
+
+        }
+
+        message.classList.add("success");
+        message.innerHTML = "Login Successful!";
+
+        setTimeout(() => {
+
+            const redirect =
+                localStorage.getItem("redirectAfterLogin");
+
+            if (redirect) {
+
+                localStorage.removeItem(
+                    "redirectAfterLogin"
+                );
+
+                window.location.href = redirect;
+
+            } else {
+
+                window.location.href = "index.html";
+
+            }
+
+        },1000);
+
+    });
+
+}
+client.auth.signInWithOAuth({
+    provider: "google"
+});
