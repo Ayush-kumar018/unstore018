@@ -135,39 +135,6 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 }
 
-.card{
-background:#111;
-border:1px solid #222;
-border-radius:20px;
-padding:20px;
-transition:.4s;
-}
-.mini-card{
-    max-width:240px;
-    margin:auto;
-    text-align:center;
-}
-
-.product-image{
-
-    position:relative;
-
-    height:260px;
-
-    background:#181818;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
 /* Slider Images */
 
 .product-image img{
@@ -1297,6 +1264,914 @@ padding:0 20px 20px;
 }
 
 }
+
+/*======================================
+        SHOP BY CATEGORY
+=======================================*/
+
+.categories{
+    width:100%;
+    padding:110px 7%;
+    background:#050505;
+}
+
+/*======================================
+        SECTION HEADER
+=======================================*/
+
+.section-header{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    color:#d4ff00;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+
+    text-transform:uppercase;
+}
+
+.section-header h2{
+
+    color:#fff;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    line-height:1.2;
+}
+
+.section-header p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#8d8d8d;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/*======================================
+        TOP GRID
+=======================================*/
+
+.category-layout{
+
+    display:grid;
+
+    grid-template-columns:1.45fr .95fr;
+
+    gap:28px;
+
+    margin-bottom:35px;
+
+}
+
+/*======================================
+        COMMON CARD
+=======================================*/
+
+.category{
+
+    position:relative;
+
+    background:linear-gradient(
+    180deg,
+    #181818,
+    #101010);
+
+    border:1px solid #252525;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    color:#fff;
+
+}
+
+/*======================================
+        FEATURED PROTEIN
+=======================================*/
+
+.protein{
+
+    min-height:330px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:50px;
+
+}
+
+.category-content{
+
+    width:48%;
+
+    z-index:2;
+
+}
+
+.category-content span{
+
+    color:#d4ff00;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.category-content h2{
+
+    font-size:46px;
+
+    margin:18px 0 15px;
+
+    font-weight:800;
+
+}
+
+.category-content p{
+
+    color:#9d9d9d;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+    font-size:16px;
+
+}
+
+/*======================================
+        PROTEIN IMAGE
+=======================================*/
+
+.protein img{
+
+    width:270px;
+
+    object-fit:contain;
+
+    transition:.4s;
+
+    filter:drop-shadow(
+    0 30px 35px
+    rgba(0,0,0,.45));
+
+}
+
+/*======================================
+        SHOP BUTTON
+=======================================*/
+
+.shop-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    background:#232323;
+
+    border:1px solid #333;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+/*======================================
+        RIGHT COLUMN
+=======================================*/
+
+.right-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+/*======================================
+        SMALL CARD
+=======================================*/
+
+.small{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:32px;
+
+    min-height:150px;
+
+}
+
+.small h3{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+}
+
+.small p{
+
+    color:#8b8b8b;
+
+    font-size:15px;
+
+}
+
+.small img{
+
+    width:120px;
+
+    object-fit:contain;
+
+    transition:.35s;
+
+    filter:drop-shadow(
+    0 18px 18px
+    rgba(0,0,0,.35));
+
+}
+
+/*======================================
+        HOVER
+=======================================*/
+
+.category:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#404040;
+
+    box-shadow:
+    0 18px 45px
+    rgba(0,0,0,.35);
+
+}
+
+.category:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.category:hover .shop-btn{
+
+    background:#d4ff00;
+
+    color:#000;
+
+    border-color:#d4ff00;
+
+}
+/*======================================
+        SECOND ROW ONLY
+=======================================*/
+
+.bottom-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    margin-top:35px;
+
+}
+
+/* CARD */
+
+.mini-card{
+
+    background:linear-gradient(180deg,#181818,#101010);
+
+    border:1px solid #262626;
+
+    border-radius:24px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    padding:28px 22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    min-height:400px;
+
+    transition:.35s;
+
+}
+
+/* IMAGE */
+
+.mini-card img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:contain;
+
+    transition:.35s;
+
+    margin-bottom:18px;
+
+    filter:drop-shadow(
+    0 20px 20px rgba(0,0,0,.35));
+
+}
+
+/* TITLE */
+
+.mini-card h4{
+
+    font-size:25px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    margin-bottom:12px;
+
+}
+
+/* DESCRIPTION */
+
+.mini-card p{
+
+    font-size:15px;
+
+    color:#8d8d8d;
+
+    text-align:center;
+
+    line-height:1.7;
+
+    min-height:55px;
+
+    margin-bottom:25px;
+
+}
+
+/* BUTTON */
+
+.mini-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    padding:14px 0;
+
+    border-radius:50px;
+
+    background:#202020;
+
+    border:1px solid #333;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+/* HOVER */
+
+.mini-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#3d3d3d;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.mini-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.mini-card:hover .mini-btn{
+
+    background:#d4ff00;
+
+    color:#000;
+
+    border-color:#d4ff00;
+
+}
+
+/* TABLET */
+
+@media(max-width:991px){
+
+.bottom-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.bottom-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.mini-card{
+
+    min-height:260px;
+
+    padding:18px 14px;
+
+}
+
+.mini-card img{
+
+    width:100px;
+
+    height:100px;
+
+}
+
+.mini-card h4{
+
+    font-size:18px;
+
+}
+
+.mini-card p{
+
+    display:none;   /* Hide description on mobile */
+
+}
+
+.mini-btn{
+
+    padding:10px 0;
+
+    font-size:13px;
+
+}
+
+}
+
+.mini-card{
+
+min-height:360px;
+
+}
+
+.mini-card img{
+
+width:150px;
+
+height:150px;
+
+}
+
+
+/*======================================
+        FEATURED OATS BANNER
+=======================================*/
+
+.wide-card{
+
+    margin-top:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:50px;
+
+    background:linear-gradient(
+    135deg,
+    #1b1b1b 0%,
+    #111111 100%);
+
+    border:1px solid #262626;
+
+    border-radius:28px;
+
+    padding:55px 60px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.wide-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#404040;
+
+    box-shadow:0 20px 55px rgba(0,0,0,.35);
+
+}
+
+.wide-content{
+
+    max-width:520px;
+
+}
+
+.wide-content span{
+
+    display:inline-block;
+
+    color:#d4ff00;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:16px;
+
+}
+
+.wide-content h2{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+}
+
+.wide-content p{
+
+    color:#8d8d8d;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.wide-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    background:#232323;
+
+    border:1px solid #333;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.wide-btn:hover{
+
+    background:#d4ff00;
+
+    color:#000;
+
+    border-color:#d4ff00;
+
+}
+
+.wide-image{
+
+    flex-shrink:0;
+
+}
+
+.wide-image img{
+
+    width:320px;
+
+    transition:.4s;
+
+    object-fit:contain;
+
+    filter:drop-shadow(
+    0 25px 35px
+    rgba(0,0,0,.4));
+
+}
+
+.wide-card:hover .wide-image img{
+
+    transform:scale(1.05);
+
+}
+
+/*======================================
+        TABLET
+=======================================*/
+
+@media(max-width:991px){
+
+.category-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.right-column{
+
+flex-direction:row;
+
+}
+
+.bottom-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.wide-card{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+padding:45px 35px;
+
+}
+
+.wide-content{
+
+max-width:100%;
+
+}
+
+.wide-image img{
+
+width:240px;
+
+}
+
+}
+
+/*======================================
+        MOBILE
+=======================================*/
+
+@media(max-width:768px){
+
+.categories{
+
+padding:80px 5%;
+
+}
+
+.section-header h2{
+
+font-size:34px;
+
+}
+
+.section-header p{
+
+font-size:16px;
+
+}
+
+.category-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.right-column{
+
+flex-direction:column;
+
+}
+
+.protein{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+padding:30px;
+
+gap:25px;
+
+}
+
+.category-content{
+
+width:100%;
+
+}
+
+.protein img{
+
+width:190px;
+
+}
+
+.small{
+
+min-height:140px;
+
+}
+
+.small img{
+
+width:100px;
+
+}
+
+.bottom-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.mini-card{
+
+min-height:360px;
+
+}
+
+.wide-card{
+
+flex-direction:column-reverse;
+
+padding:35px 25px;
+
+gap:30px;
+
+text-align:center;
+
+}
+
+.wide-image img{
+
+width:190px;
+
+}
+
+.wide-content h2{
+
+font-size:32px;
+
+}
+
+.wide-content p{
+
+font-size:15px;
+
+}
+
+.shop-btn,
+.mini-btn,
+.wide-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+@media (max-width:768px){
+
+    .bottom-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:16px;
+    }
+
+    .mini-card{
+        min-height:250px;
+        padding:18px 12px;
+    }
+
+  .mini-card img{
+
+    width:300px;
+
+    height:170px;
+
+    object-fit:contain;
+
+    margin-bottom:10px;
+
+}
+    .mini-card h4{
+        font-size:18px;
+    }
+
+    .mini-card p{
+        display:none;
+    }
+
+    .mini-btn{
+        display:none;
+    }
+
+}
+}
+
 </style>
 <link rel="stylesheet" href="cart.css">
 
@@ -1335,6 +2210,7 @@ padding:0 20px 20px;
     <a href="#" id="profileLink">👤</a>
 
     <span id="username"></span>
+
 
     <a href="wishlist.html">❤️</a>
 
@@ -1375,123 +2251,147 @@ Shop Now
 </div>
 
 </section>
+<!-- ==========================
+      SHOP BY CATEGORY
+=========================== -->
 
-<section class="section reveal" id="products">
+<section class="categories" id="products">
 
-<center><h2 class="section-title">
-Supplements
-</h2></center>
+<div class="section-header">
 
-<div class="products">
-<div class="products">
+<span class="section-tag">
+SHOP BY CATEGORY
+</span>
 
-<!-- PROTEIN -->
-<div class="card"
-onclick="window.location.href='product.html?category=whey-concentrate'">
+<h2>
+Find Your Perfect Supplement
+</h2>
 
-    <div class="product-image protein-slider">
+<p>
+Premium nutrition designed for every fitness goal.
+</p>
 
-        <img src="images/protein2.webp" class="active">
-        <img src="images/protein1.webp" >
+</div>
+
+<div class="category-layout">
+
+    <!-- LEFT FEATURED -->
+
+    <a href="product.html?category=whey-concentrate" class="category protein">
+
+        <div class="category-content">
+
+            <span>BEST SELLER</span>
+
+            <h2>Protein</h2>
+
+            <p>
+                Premium Whey Protein for Muscle Growth & Recovery
+            </p>
+
+            <div class="shop-btn">
+                Shop Collection →
+            </div>
+
+        </div>
+
+        <img src="images/protein1.png">
+
+    </a>
+
+    <!-- RIGHT COLUMN -->
+
+    <div class="right-column">
+
+        <a href="product.html?category=creatine" class="category small">
+
+            <div>
+
+                <h3>Creatine</h3>
+
+                <p>Strength & Performance</p>
+
+            </div>
+
+            <img src="images/creatine1.png">
+
+        </a>
+
+        <a href="product.html?category=pre-workout"
+class="category small">
+
+            <div>
+
+                <h3>Pre Workout</h3>
+
+                <p>Energy & Focus</p>
+
+            </div>
+
+            <img src="images/preworkout1.png">
+
+        </a>
 
     </div>
 
-    <h3>Protein</h3>
-
-    <button class="buy">
-        View Products
-    </button>
-
 </div>
 
-<!-- PRE WORKOUT -->
-<div class="card"
-onclick="window.location.href='product.html?category=pre-workout'">
+<!-- SECOND ROW -->
+<div class="bottom-grid">
 
-<div class="product-image">⚡</div>
+    <a href="product.html?category=mass-gainer" class="mini-card">
+        <img src="images/massgainer1.png" alt="Mass Gainer">
+        <h4>Mass Gainer</h4>
+        <p>Lean muscle & healthy weight gain.</p>
+        <div class="mini-btn">Shop Now →</div>
+    </a>
 
-<h3>Pre Workout</h3>
+    <a href="product.html?category=bcaa" class="mini-card">
+        <img src="images/bcaa1.png" alt="BCAA">
+        <h4>BCAA</h4>
+        <p>Recovery & muscle support.</p>
+        <div class="mini-btn">Shop Now →</div>
+    </a>
 
-<button class="buy">
-View Products
-</button>
+    <a href="product.html?category=fatburner" class="mini-card">
+        <img src="images/fatburner1.png" alt="Fat Burner">
+        <p>Support your fat-loss journey.</p>
+        <h4>Fat Burner</h4>
+        <div class="mini-btn">Shop Now →</div>
+    </a>
 
-</div>
-
-<!-- FAT BURNER -->
-<div class="card"
-onclick="window.location.href='product.html?category=fat-burner'">
-
-<div class="product-image">🔥</div>
-
-<h3>Fat Burner</h3>
-
-<button class="buy">
-View Products
-</button>
-
-</div>
-<div class="card"
-onclick="window.location.href='product.html?category=creatine'">
-
-<div class="product-image">🥤</div>
-
-<h3>Creatine</h3>
-
-<button class="buy">
-View Products
-</button>
+    <a href="product.html?category=vitamin" class="mini-card">
+        <img src="images/multivitamin1.png" alt="Multivitamin">
+        <h4>Multivitamin</h4>
+        <p>Daily health & immunity support.</p>
+        <div class="mini-btn">Shop Now →</div>
+    </a>
 
 </div>
+<!-- LAST ROW -->
+<a href="products.html?category=oats" class="wide-card">
 
-<!-- MASS GAINER -->
-<div class="card"
-onclick="window.location.href='product.html?category=mass-gainer'">
+    <div class="wide-content">
 
-<div class="product-image">🥤</div>
+        <span>HEALTHY NUTRITION</span>
 
-<h3>Mass Gainer</h3>
+        <h2>Peanut Butter & Oats</h2>
 
-<button class="buy">
-View Products
-</button>
+        <p>
+            Fuel your day with premium oats and natural peanut butter.
+            Perfect for breakfast, bulking and healthy snacking.
+        </p>
 
+        <div class="wide-btn">
+            Shop Collection →
+        </div>
+
+    </div>
+<div class="wide-image">
+    <img src="images/pintola1.png" alt="Oats">
 </div>
 
-<!-- BCAA -->
-<div class="card"
-onclick="window.location.href='product.html?category=bcaa'">
-
-<div class="product-image">💥</div>
-
-<h3>BCAA</h3>
-
-<button class="buy">
-View Products
-</button>
-
-</div>
-
-<!-- VITAMINS -->
-<div class="card"
-onclick="window.location.href='product.html?category=vitamins'">
-
-<div class="product-image">💊</div>
-
-<h3>Vitamins</h3>
-
-<button class="buy">
-View Products
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
+</a>
 </section>
 <!-- gym accesories -->
  

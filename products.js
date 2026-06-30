@@ -404,6 +404,35 @@ description:"Supports heart, brain and joint health"
 }
 
 ],
+"oats":[
+
+{
+id:47,
+name:"Daily Multivitamin",
+price:699,
+image:"images/multivitamin.jpg",
+description:"Essential vitamins and minerals for daily health"
+},
+
+{
+id:48,
+name:"Vitamin D3",
+price:499,
+image:"images/vitamin-d3.jpg",
+description:"Supports bone health and immunity"
+},
+
+{
+id:49,
+name:"Omega 3 Fish Oil",
+price:899,
+image:"images/omega3.jpg",
+description:"Supports heart, brain and joint health"
+}
+
+],
+
+
 
 
   
