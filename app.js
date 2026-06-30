@@ -15,36 +15,42 @@ function renderProducts(productList){
         // Product HTML will go here
        container.innerHTML += `
 
-<div class="product-info">
+<div class="product">
 
-    <div class="product-top">
+    <img src="${product.image}" alt="${product.name}">
 
-        <h3>${product.name}</h3>
+    <div class="product-info">
 
-        <span class="wishlist-btn"
-        onclick="event.stopPropagation();addToWishlist(${product.id})">
+        <div class="product-top">
 
-        ${
-        (JSON.parse(localStorage.getItem("wishlist")) || [])
-        .some(item => item.id == product.id)
-        ? "❤️"
-        : "🤍"
-        }
+            <h3>${product.name}</h3>
 
-        </span>
+            <span class="wishlist-btn"
+            onclick="event.stopPropagation();addToWishlist(${product.id})">
+
+            ${
+            (JSON.parse(localStorage.getItem("wishlist")) || [])
+            .some(item => item.id == product.id)
+            ? "❤️"
+            : "🤍"
+            }
+
+            </span>
+
+        </div>
+
+        <p>${product.description}</p>
+
+        <div class="price">
+            ₹${product.price}
+        </div>
+
+        <button class="btn"
+        onclick="event.stopPropagation();addToCart(${product.id})">
+            Add To Cart
+        </button>
 
     </div>
-
-    <p>${product.description}</p>
-
-    <div class="price">
-        ₹${product.price}
-    </div>
-
-    <button class="btn"
-    onclick="event.stopPropagation();addToCart(${product.id})">
-        Add To Cart
-    </button>
 
 </div>
 
@@ -90,6 +96,10 @@ const categoryInfo = {
   "vitamins": {
     title: "VITAMINS",
     subtitle: "Daily health and wellness essentials."
+  },
+  "oats": {
+    title: "Peanut Butter & Oats",
+    subtitle: "Creamy Fuel for Every Bite."
   }
 
 };

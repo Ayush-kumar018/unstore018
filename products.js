@@ -381,54 +381,138 @@ description:"Advanced mass building formula"
 
 {
 id:44,
-name:"Daily Multivitamin",
-price:699,
-image:"images/multivitamin.jpg",
-description:"Essential vitamins and minerals for daily health"
+name:"HK Vitals MultiVitamin",
+price:400,
+image:"images/multivitamin2.png",
+description:"60 Tablets"
 },
 
 {
 id:45,
-name:"Vitamin D3",
-price:499,
-image:"images/vitamin-d3.jpg",
-description:"Supports bone health and immunity"
+name:"HK Vitals MultiVitamin Women",
+price:400,
+image:"images/multivitaminwomen.png",
+description:"60 Tablets"
 },
 
 {
 id:46,
-name:"Omega 3 Fish Oil",
+name:"HK Vitals Fish Oil",
+price:300,
+image:"images/fishoil.png",
+description:"60 Softgels"
+},
+{
+id:47,
+name:"HK Vitals Omega-3",
+price:400,
+image:"images/omega3.png",
+description:"60 Softgels"
+},
+{
+id:48,
+name:"HK Vitals Biotin",
+price:400,
+image:"images/biotin.png",
+description:"60 Tablets"
+},
+{
+id:49,
+name:"HK Vitals DHT Blocker",
+price:500,
+image:"images/dht.png",
+description:"60 Capsules"
+},
+{
+id:50,
+name:"HK Vitals Ashwagandha Plus",
+price:400,
+image:"images/ashwagandha.png",
+description:"60 Capsules"
+},
+{
+id:51,
+name:"HK Vitals Calcium Magnesium Zinc",
+price:300,
+image:"images/cmz.png",
+description:"60 Tablets"
+},
+{
+id:52,
+name:"HK Vitals Vitamin D3 Unflavoured",
+price:400,
+image:"images/vitamind3.png",
+description:"60 Tablets"
+},
+{
+id:53,
+name:"HK Vitals Glutathione",
+price:700,
+image:"images/gluthathione.png",
+description:"30 Capsules"
+},
+{
+id:54,
+name:"HK Vitals Glutathione Effervescent with Vitamin C",
+price:700,
+image:"images/gluthathione.png",
+description:"15 Tablets"
+},
+{
+id:55,
+name:"HK Vitals 100% Magnesium Glycinate",
 price:899,
-image:"images/omega3.jpg",
-description:"Supports heart, brain and joint health"
+image:"images/magnesiumgly.png",
+description:"120 Capsules"
+},
+{
+id:56,
+name:"HK Vitals Skin Radiance Collagen ",
+price:499,
+image:"images/collagen.png",
+description:"200 g (Orange,Watermelon)"
+},
+{
+id:57,
+name:"HK Vitals Skin Radiance Collagen Veg ",
+price:1300,
+image:"images/collagen.png",
+description:"200 g"
 }
-
 ],
 "oats":[
 
 {
-id:47,
-name:"Daily Multivitamin",
-price:699,
-image:"images/multivitamin.jpg",
-description:"Essential vitamins and minerals for daily health"
+id:70,
+name:"MyFitness Chocolate Peanut Butter crunchy",
+price:890,
+image:"images/myfitness.png",
+description:"2.5 kg (chocolate,crunchy)"
 },
 
 {
-id:48,
-name:"Vitamin D3",
-price:499,
-image:"images/vitamin-d3.jpg",
-description:"Supports bone health and immunity"
+id:71,
+name:"Alpino High Protein Super Oats Chocolate",
+price:1100,
+image:"images/alpino.png",
+description:"2.5 Kg (Chocolate,Zero Added Sugar)"
 },
 
 {
-id:49,
-name:"Omega 3 Fish Oil",
-price:899,
-image:"images/omega3.jpg",
-description:"Supports heart, brain and joint health"
+id:72,
+name:"Doctor's Choice Protein Oats",
+price:590,
+image:"images/doctorchice.png",
+description:"750 g (Dark Choco Berry)"
+},
+{
+id:73,
+name:"Pintola High Protein Oats",
+price:490,
+image:"images/pintola2.png",
+description:"1 kg (Chocolate)"
 }
+
 
 ],
 
