@@ -406,35 +406,35 @@ description:"60 Softgels"
 id:47,
 name:"HK Vitals Omega-3",
 price:400,
-image:"images/omega3.png",
+image:"omega3.png",
 description:"60 Softgels"
 },
 {
 id:48,
 name:"HK Vitals Biotin",
 price:400,
-image:"images/biotin.png",
+image:"biotin.png",
 description:"60 Tablets"
 },
 {
 id:49,
 name:"HK Vitals DHT Blocker",
 price:500,
-image:"images/dht.png",
+image:"dht.png",
 description:"60 Capsules"
 },
 {
 id:50,
 name:"HK Vitals Ashwagandha Plus",
 price:400,
-image:"images/ashwagandha.png",
+image:"ashwagandha.png",
 description:"60 Capsules"
 },
 {
 id:51,
 name:"HK Vitals Calcium Magnesium Zinc",
 price:300,
-image:"images/cmz.png",
+image:"cmz.png",
 description:"60 Tablets"
 },
 {
@@ -448,35 +448,35 @@ description:"60 Tablets"
 id:53,
 name:"HK Vitals Glutathione",
 price:700,
-image:"images/gluthathione.png",
+image:"gluthathione.png",
 description:"30 Capsules"
 },
 {
 id:54,
 name:"HK Vitals Glutathione Effervescent with Vitamin C",
 price:700,
-image:"images/gluthathione.png",
+image:"gluthathione.png",
 description:"15 Tablets"
 },
 {
 id:55,
 name:"HK Vitals 100% Magnesium Glycinate",
 price:899,
-image:"images/magnesiumgly.png",
+image:"magnesiumgly.png",
 description:"120 Capsules"
 },
 {
 id:56,
 name:"HK Vitals Skin Radiance Collagen ",
 price:499,
-image:"images/collagen.png",
+image:"collagen.png",
 description:"200 g (Orange,Watermelon)"
 },
 {
 id:57,
 name:"HK Vitals Skin Radiance Collagen Veg ",
 price:1300,
-image:"images/collagen.png",
+image:"collagen.png",
 description:"200 g"
 }
 ],
@@ -486,7 +486,7 @@ description:"200 g"
 id:70,
 name:"MyFitness Chocolate Peanut Butter crunchy",
 price:890,
-image:"images/myfitness.png",
+image:"myfitness.png",
 description:"2.5 kg (chocolate,crunchy)"
 },
 
@@ -494,7 +494,7 @@ description:"2.5 kg (chocolate,crunchy)"
 id:71,
 name:"Alpino High Protein Super Oats Chocolate",
 price:1100,
-image:"images/alpino.png",
+image:"alpino.png",
 description:"2.5 Kg (Chocolate,Zero Added Sugar)"
 },
 
@@ -502,14 +502,14 @@ description:"2.5 Kg (Chocolate,Zero Added Sugar)"
 id:72,
 name:"Doctor's Choice Protein Oats",
 price:590,
-image:"images/doctorchice.png",
+image:"doctorchice.png",
 description:"750 g (Dark Choco Berry)"
 },
 {
 id:73,
 name:"Pintola High Protein Oats",
 price:490,
-image:"images/pintola2.png",
+image:"pintola2.png",
 description:"1 kg (Chocolate)"
 }
 
