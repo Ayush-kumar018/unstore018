@@ -1,0 +1,353 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top,#1b1b1b 0%,#050505 70%);
+    color:#fff;
+    padding:20px;
+}
+
+.login-card{
+
+    width:100%;
+    max-width:430px;
+
+    background:rgba(17,17,17,.95);
+
+    border:1px solid #262626;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,.45);
+
+    animation:fadeUp .6s ease;
+}
+.logo{
+    text-align:center;
+    color:#d4ff00;
+    font-size:42px;
+    font-weight:900;
+    line-height:1.1;
+    letter-spacing:1px;
+    margin-bottom:18px;
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#9b9b9b;
+
+    margin-bottom:35px;
+
+    font-size:15px;
+
+}
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#d4ff00;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#1a1a1a;
+
+    color:#fff;
+
+    border:2px solid #2d2d2d;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.input-group input:focus{
+
+    border-color:#d4ff00;
+
+}
+
+.row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+}
+
+.row a{
+
+    color:#d4ff00;
+
+    text-decoration:none;
+
+}
+
+.login-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#d4ff00;
+
+    color:#000;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    margin:25px 0;
+
+    color:#777;
+
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:#333;
+
+}
+
+.divider span{
+
+    padding:0 15px;
+
+}
+
+.google-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:2px solid #333;
+
+    border-radius:14px;
+
+    background:transparent;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.google-btn:hover{
+
+    border-color:#d4ff00;
+
+}
+
+.signup{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#999;
+
+}
+
+.signup a{
+
+    color:#d4ff00;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@media(max-width:480px){
+
+.login-card{
+
+padding:30px 22px;
+
+}
+
+.logo{
+
+font-size:26px;
+
+}
+
+}
+
+.message{
+    display:none;
+    margin-bottom:18px;
+    padding:14px;
+    border-radius:10px;
+    font-size:14px;
+    text-align:center;
+}
+
+.message.error{
+    display:block;
+    background:#2a1212;
+    border:1px solid #ff4d4f;
+    color:#ffb3b3;
+}
+
+.message.success{
+    display:block;
+    background:#122612;
+    border:1px solid #2ecc71;
+    color:#b8ffd4;
+}
+.login-btn:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+}
+.password-box{
+    position:relative;
+}
+
+.password-box input{
+    width:100%;
+    padding:15px;
+    padding-right:55px;
+    background:#1a1a1a;
+    color:#fff;
+    border:2px solid #2d2d2d;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+}
+
+.password-box input:focus{
+    border-color:#d4ff00;
+}
+
+#togglePassword{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    font-size:20px;
+    color:#999;
+}
+
+#togglePassword:hover{
+    color:#d4ff00;
+}
+.row label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+}
+
+.row input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    accent-color:#d4ff00;
+}
+.password-box{
+    position: relative;
+    margin-bottom: 25px;
+}
